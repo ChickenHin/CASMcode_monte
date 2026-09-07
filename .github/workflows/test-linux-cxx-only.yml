@@ -1,10 +1,7 @@
 name: Testing c++ only on ubuntu-latest
 
 on:
-  push:
-  pull_request:
-  schedule:
-    - cron: '0 12 * * 0'
+  workflow_dispatch: 
 
 env:
   SKBUILD_BUILD_OPTIONS: --verbose
@@ -100,9 +97,9 @@ jobs:
           export CASM_PREFIX=$(python -m libcasm.casmglobal --prefix)
           make test
 
-      - name: upload test log
-        if: always()
-        uses: actions/upload-artifact@v7
-        with:
-          name: libcasm-monte-cxx-test-log
-          path: build_cxx_test/Testing/Temporary/LastTest.log
+      # - name: upload test log
+      #   if: always()
+      #   uses: actions/upload-artifact@v7
+      #   with:
+      #     name: libcasm-monte-cxx-test-log
+      #     path: build_cxx_test/Testing/Temporary/LastTest.log
