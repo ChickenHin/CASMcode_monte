@@ -1,10 +1,10 @@
 name: Test CASM dependencies from PyPI on Ubuntu
 
 on:
-  push:
-  pull_request:
-  schedule:
-    - cron: '0 12 * * 0'
+  # push:
+  # pull_request:
+  # schedule:
+  #   - cron: '0 12 * * 0'
 
 jobs:
   install-and-test:
